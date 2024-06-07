@@ -1,4 +1,3 @@
-
 # Define a VPC
 
 resource "aws_vpc" "my_vpc" {
@@ -161,17 +160,15 @@ resource "aws_route_table_association" "public" {
 
 #}
 
-# Launch 15 spot instances
+# Launch 5 instances
 
-resource "aws_spot_instance_request" "spot_instances" {
+resource "aws_instance" "on_demand_instances" {
 
-  count         = 15
+  count         = 5
 
   ami           = var.ami_id
 
   instance_type = var.instance_type
-
-  spot_price    = var.spot_price
 
   key_name      = var.key_name
 
@@ -179,17 +176,16 @@ resource "aws_spot_instance_request" "spot_instances" {
 
   associate_public_ip_address = true
 
-  wait_for_fulfillment        = true
-
   tags = {
 
-    Name = "spot-instance-${count.index}"
+    Name = "kubernetes_workers-${count.index}"
 
   }
 
-  root_block_device {
 
-    volume_size = 20
+ root_block_device {
+
+    volume_size = 30
 
     volume_type = "gp2"
 
