@@ -1,6 +1,6 @@
 region                 = "ap-south-1"
-aws_access_key         = "AKIAWT66BEDQKJUZMFD7"
-aws_secret_key         = "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"
+aws_access_key         = "AKIAWT66BEDQEEFCCLNL"
+aws_secret_key         = "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"
 vpc_name               = "my-vpc"
 public_subnet_name     = "public-subnet"
 private_subnet_name    = "private-subnet"
