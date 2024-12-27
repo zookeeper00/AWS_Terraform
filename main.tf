@@ -1,4 +1,4 @@
-# Define a VPC
+# Define a VPC.
 
 resource "aws_vpc" "my_vpc" {
 
