@@ -1,17 +1,8 @@
-resource "aws_instance" "this" {
+resource "aws_instance" "snap_vm" {
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id     = var.subnet_id
-  key_name      = var.key_name
   tags = {
-    Name = var.name
+    Name = "snap-vm"
   }
-}
-
-output "instance_id" {
-  value = aws_instance.this.id
-}
-
-output "public_ip" {
-  value = aws_instance.this.public_ip
 }

@@ -1,7 +1,4 @@
 output "instance_id" {
-  value = aws_instance.this.id
-}
-
-output "public_ip" {
-  value = aws_instance.this.public_ip
+  description = "The ID of the EC2 instance"
+  value       = aws_instance.snap_vm.id
 }
