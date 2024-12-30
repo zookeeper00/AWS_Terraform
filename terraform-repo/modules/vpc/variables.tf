@@ -1,14 +1,20 @@
+variable "prefix" {
+  description = "Resource name prefix"
+  type        = string
+}
+
 variable "cidr_block" {
-  description = "The CIDR block for the VPC"
+  description = "VPC CIDR block"
   type        = string
 }
 
-variable "public_subnet_cidr" {
-  description = "CIDR block for the public subnet"
+variable "subnet_cidr_block" {
+  description = "Subnet CIDR block"
   type        = string
 }
 
-variable "availability_zone" {
-  description = "The availability zone for the subnet"
-  type        = string
+variable "map_public_ip" {
+  description = "Should public IPs be mapped?"
+  type        = bool
+  default     = true
 }

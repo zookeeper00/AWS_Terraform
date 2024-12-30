@@ -1,4 +1,11 @@
 output "instance_id" {
-  description = "The ID of the EC2 instance"
-  value       = aws_instance.snap_vm.id
+  value = aws_instance.snaps_ec2.id
+}
+
+output "instance_public_ip" {
+  value = aws_instance.snaps_ec2.public_ip
+}
+
+output "instance_private_ip" {
+  value = aws_instance.snaps_ec2.private_ip
 }

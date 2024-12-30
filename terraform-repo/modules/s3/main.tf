@@ -1,8 +1,8 @@
-resource "aws_s3_bucket" "snap_bucket" {
-  bucket = var.bucket_name
-  acl    = "private"
+resource "aws_s3_bucket" "snaps_bucket" {
+  bucket = "${var.prefix}-bucket"
+  acl    = var.acl
 
   tags = {
-    Name = "snap-bucket"
+    Name = "${var.prefix}-s3"
   }
 }

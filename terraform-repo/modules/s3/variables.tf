@@ -1,4 +1,10 @@
-variable "bucket_name" {
-  description = "The name of the S3 bucket"
+variable "prefix" {
+  description = "Resource name prefix"
   type        = string
+}
+
+variable "acl" {
+  description = "ACL for the bucket"
+  type        = string
+  default     = "private"
 }
