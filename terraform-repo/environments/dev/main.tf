@@ -1,5 +1,5 @@
 module "vpc" {
-  source            = "../../modules/vpc"
+  source            = "./modules/vpc"
   prefix            = "snaps-dev"
   cidr_block        = var.vpc_cidr
   subnet_cidr_block = var.subnet_cidr
@@ -7,13 +7,13 @@ module "vpc" {
 }
 
 module "s3" {
-  source = "../../modules/s3"
+  source = "./modules/s3"
   prefix = "snaps-dev"
   acl    = "private"
 }
 
 module "ec2" {
-  source         = "../../modules/ec2"
+  source         = "./modules/ec2"
   prefix         = "snaps-dev"
   ami_id         = var.ami_id
   instance_type  = "t2.micro"
