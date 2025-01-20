@@ -1,17 +1,15 @@
-resource "aws_vpc" "snaps_vpc" {
+resource "aws_vpc" "this" {
   cidr_block           = var.cidr_block
-  enable_dns_support   = true
-  enable_dns_hostnames = true
   tags = {
-    Name = "${var.prefix}-vpc"
+    Name = var.vpc_name
   }
 }
 
-resource "aws_subnet" "snaps_subnet" {
-  vpc_id                  = aws_vpc.snaps_vpc.id
+resource "aws_subnet" "public" {
   cidr_block              = var.subnet_cidr_block
-  map_public_ip_on_launch = var.map_public_ip
+  vpc_id                  = aws_vpc.this.id
+  map_public_ip_on_launch = true
   tags = {
-    Name = "${var.prefix}-subnet"
+    Name = "${var.vpc_name}-public-subnet"
   }
 }

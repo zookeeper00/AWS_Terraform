@@ -1,5 +1,5 @@
-variable "prefix" {
-  description = "Resource name prefix"
+variable "vpc_name" {
+  description = "Name of VPC"
   type        = string
 }
 
@@ -9,12 +9,7 @@ variable "cidr_block" {
 }
 
 variable "subnet_cidr_block" {
-  description = "Subnet CIDR block"
+  description = "CIDR block for Public Subnets"
   type        = string
 }
 
-variable "map_public_ip" {
-  description = "Should public IPs be mapped?"
-  type        = bool
-  default     = true
-}

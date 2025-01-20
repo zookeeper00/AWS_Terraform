@@ -1,11 +1,13 @@
-resource "aws_instance" "snaps_ec2" {
+resource "aws_instance" "this" {
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id     = var.subnet_id
 
   tags = {
-    Name = "${var.prefix}-ec2"
+    Name = var.instance_name
   }
+}
 
-  user_data = var.user_data != "" ? var.user_data : null
+output "instance_id" {
+  value = aws_instance.this.id
 }

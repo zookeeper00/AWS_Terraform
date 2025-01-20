@@ -1,22 +1,14 @@
 module "vpc" {
   source            = "../../modules/vpc"
-  prefix            = "snaps-dev"
-  cidr_block        = var.vpc_cidr
-  subnet_cidr_block = var.subnet_cidr
-  map_public_ip     = true
-}
-
-module "s3" {
-  source = "../../modules/s3"
-  prefix = "snaps-dev"
-  acl    = "private"
+  vpc_name          = var.vpc_name
+  cidr_block        = var.cidr_block
+  subnet_cidr_block = var.public_subnet_cidr
 }
 
 module "ec2" {
   source         = "../../modules/ec2"
-  prefix         = "snaps-dev"
+  instance_name  = var.ec2_name
   ami_id         = var.ami_id
-  instance_type  = "t2.micro"
-  subnet_id      = module.vpc.subnet_id
-  user_data      = file("scripts/dev-user-data.sh")
+  instance_type  = var.instance_type
+  subnet_id      = module.vpc.public_subnet_id
 }

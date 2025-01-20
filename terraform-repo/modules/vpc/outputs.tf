@@ -1,7 +1,10 @@
 output "vpc_id" {
-  value = aws_vpc.snaps_vpc.id
+    description = "value of vpc id"
+    value = aws_vpc.this.id
 }
 
-output "subnet_id" {
-  value = aws_subnet.snaps_subnet.id
+output "public_subnet_cidr" {
+    description = "value of public subnet cidr"
+    value = aws_subnet.public.id
+  
 }

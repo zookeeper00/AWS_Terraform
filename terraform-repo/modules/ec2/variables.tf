@@ -1,5 +1,5 @@
-variable "prefix" {
-  description = "Resource name prefix"
+variable "instance_name" {
+  description = "Name of the EC2 instance"
   type        = string
 }
 
@@ -14,13 +14,9 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-variable "user_data" {
-  description = "User data script for the EC2 instance"
-  type        = string
-  default     = ""
-}
-
 variable "subnet_id" {
   description = "Subnet ID for the EC2 instance"
   type        = string
 }
+
+
