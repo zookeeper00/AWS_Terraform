@@ -8,3 +8,7 @@ resource "aws_instance" "this" {
   }
 }
 
+output "ec2_instance_id" {
+  value       = aws_instance.this.id
+  description = "ID of the EC2 instance"
+}
