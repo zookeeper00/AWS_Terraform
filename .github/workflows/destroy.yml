@@ -1,6 +1,8 @@
 name: terraform destroy
 on:
-    workflow_dispatch: # Trigger the workflow manually
+    push:
+      branches:
+        - Dev
 jobs:
     terraform:
         runs-on: ubuntu-latest
