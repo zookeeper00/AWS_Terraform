@@ -1,9 +1,10 @@
 name: Terraform Deployment to AWS
 
 on:
-  push:
-    branches:
-      - Dev  # Trigger deployment when code is pushed to 'prod' branch
+  workflow_dispatch: # Trigger the workflow manually
+  # push:
+  #   branches:
+  #     - Dev  # Trigger deployment when code is pushed to 'prod' branch
 
 jobs:
   terraform:
