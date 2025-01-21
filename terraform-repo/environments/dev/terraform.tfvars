@@ -1,0 +1,6 @@
+vpc_name    = "docker"
+cidr_block = "10.0.0.0/16"
+public_subnet_cidr = "10.0.1.0/28"
+ec2_name = "docker"
+ami_id      = "ami-02e2af61198e99faf"
+instance_type = "t3.micro"
